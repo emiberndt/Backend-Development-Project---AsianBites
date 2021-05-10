@@ -27,6 +27,22 @@ def get_reviews():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        existing_user = mongo.db.user.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("This username is already taken")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.user.insert_one(register)
+
+        session["users"] = request.form.get("username").lower()
+        flash("Registration Completed!")
     return render_template("register.html")
 
 
