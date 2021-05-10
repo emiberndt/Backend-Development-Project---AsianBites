@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What 2 Read</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template</h2>
+   
     {% for review in reviews %}
         {{ review.category_name }}<br>
         {{ review.book_title }}<br>
@@ -14,5 +11,5 @@
         {{ review.about }}<br>
         {{ review.buy_here }}<br>
     {% endfor %}
-</body>
-</html>
+
+ {% endblock %}
