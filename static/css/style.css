@@ -1,6 +1,7 @@
 body {
     background: url("/static/media/books.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Oswald', sans-serif;
+
 };
