@@ -11,18 +11,25 @@
     {% endfor %}
 
     <ul class="collapsible popout">
+        {% for review in reviews %}
         <li>
-            <div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i>First</div>
-            <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-header">
+                <i class="material-icons">arrow_drop_down_circle</i>
+                <strong>{{ review.book_title }} by {{ review.author }}</strong>
+            </div>
+            <div class="collapsible-body white">
+                <img src="{{ review.image_url }}" alt="The cover of the book">
+                <br>
+                <h4>{{ review.book_title }}</h4>
+                <br>
+                <h5>{{ review.author }}</h5>
+                <br>
+                <h5>Category: {{ review.category_name }}</h5>
+                <p>{{ review.about }}</p>
+                <a href="{{ review.buy_here }}">Buy it here!</a>
+            </div>
         </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i>Second</div>
-            <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i>Third</div>
-            <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% endfor %}
     </ul>
 
  {% endblock %}
