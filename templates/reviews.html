@@ -4,11 +4,11 @@
     <ul class="collapsible popout">
         {% for review in reviews %}
         <li>
-            <div class="collapsible-header">
+            <div class="collapsible-header blue-grey darken-2 white-text">
                 <i class="material-icons">arrow_drop_down_circle</i>
                 <strong>{{ review.book_title }} by {{ review.author }}</strong>
             </div>
-            <div class="collapsible-body white">
+            <div class="collapsible-body blue-grey darken-2 white-text">
                 <img src="{{ review.image_url }}" alt="The cover of the book">
                 <br>
                 <h4>{{ review.book_title }}</h4>
