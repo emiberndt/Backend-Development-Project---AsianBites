@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h3 class="center-align white-text">Book Reviews</h3>
+
     <ul class="collapsible popout">
         {% for review in reviews %}
         <li>
@@ -21,6 +23,7 @@
                 <p>What the reader thought:</p>
                 <p>{{ review.review }}</p>
                 <a href="{{ review.buy_here }}">Buy it here!</a>
+                <p><em>by: {{ review.created_by }}</em></p>
             </div>
         </li>
         {% endfor %}
