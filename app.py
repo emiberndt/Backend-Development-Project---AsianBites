@@ -116,6 +116,20 @@ def add_review():
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    if request.method == "POST":
+        edit = {
+            "book_title": request.form.get("book_title"),
+            "author": request.form.get("author"),
+            "category_name": request.form.get("category_name"),
+            "about": request.form.get("about"),
+            "review": request.form.get("review"),
+            "image_url": request.form.get("image_url"),
+            "buy_here": request.form.get("buy_here"),
+            "review_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id":ObjectId(review_id)}, edit)
+        flash("Book Review Edited!")
+          
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)
