@@ -28,7 +28,7 @@
                 <p>{{ review.review }}</p>
                 <a href="{{ review.buy_here }}">Buy it here!</a>
                 <p><em>by: {{ review.created_by }}</em></p>
-                <a href="" class="btn-small wave-effect deep-orange">Edit</a>
+                <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn-small wave-effect deep-orange">Edit</a>
             </div>
         </li>
         {% endfor %}

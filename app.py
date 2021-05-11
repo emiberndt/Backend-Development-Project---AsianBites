@@ -109,8 +109,18 @@ def add_review():
         mongo.db.reviews.insert_one(review)
         flash("Book Review Added!")
         return redirect(url_for("reviews"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_review.html", categories=categories)
+
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    review = mongo.db.tasks.find_one({"_id": ObjectId(review_id)})
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_review.html", review=review, categories=categories)
+
 
 
 if __name__ == "__main__":
