@@ -3,7 +3,7 @@
 
     <h3 class="center-align white-text">Book Reviews</h3>
 
-    <h5 class="center-align white-text">Everyone os welcome to browse thourgh our library of books and reviews, provided by our members.</h5>
+    <h5 class="center-align white-text">Everyone is welcome to browse thourgh our library of books and reviews, provided by our members.</h5>
     <p class="center-align white-text">Contribution by members only, feel free to join us!.</p>
 
 
@@ -11,8 +11,8 @@
         {% for review in reviews %}
         <li>
             <div class="collapsible-header blue-grey darken-2 white-text">
-                <i class="material-icons">arrow_drop_down_circle</i>
                 <strong>{{ review.book_title }} by {{ review.author }}</strong>
+                <i class="material-icons">keyboard_arrow_down</i>
             </div>
             <div class="collapsible-body blue-grey darken-2 white-text">
                 <img src="{{ review.image_url }}" alt="The cover of the book">
@@ -28,6 +28,7 @@
                 <p>{{ review.review }}</p>
                 <a href="{{ review.buy_here }}">Buy it here!</a>
                 <p><em>by: {{ review.created_by }}</em></p>
+                <a href="" class="btn-small wave-effect deep-orange">Edit</a>
             </div>
         </li>
         {% endfor %}

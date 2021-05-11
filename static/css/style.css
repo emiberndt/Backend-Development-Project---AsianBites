@@ -5,3 +5,11 @@ body {
     font-family: 'Oswald', sans-serif;
 
 };
+
+.btn-small {
+    margin: 5%;
+}
+
+.collapsible-header .col strong {
+    margin: 5%;
+}
