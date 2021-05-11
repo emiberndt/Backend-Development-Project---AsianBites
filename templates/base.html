@@ -8,7 +8,8 @@
         type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}" type="text/css" />
     {% block styles %}
@@ -59,7 +60,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="transparent center-align orange-text">{{ message }}</h4>
+                        <h4 class="transparent center-align deep-orange-text">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
