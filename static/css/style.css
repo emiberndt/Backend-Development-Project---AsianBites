@@ -1,5 +1,5 @@
 body {
-    background: url("/static/media/books.jpg");
+    background-color: darkslategrey;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Oswald', sans-serif;
