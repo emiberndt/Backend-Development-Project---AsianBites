@@ -129,11 +129,18 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update({"_id":ObjectId(review_id)}, edit)
         flash("Book Review Edited!")
-          
+
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_review.html", review=review, categories=categories)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Book Review Deleted")
+    return redirect(url_for("get_reviews"))
 
 
 
