@@ -92,6 +92,9 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+@app.route("/add_review")
+def add_review():
+    return render_template("add_review.html")
 
 
 if __name__ == "__main__":
