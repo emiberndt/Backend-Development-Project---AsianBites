@@ -1,14 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-   
-    {% for review in reviews %}
-        {{ review.category_name }}<br>
-        {{ review.book_title }}<br>
-        {{ review.author }}<br>
-        {{ review.image_url }}<br>
-        {{ review.about }}<br>
-        {{ review.buy_here }}<br>
-    {% endfor %}
 
     <ul class="collapsible popout">
         {% for review in reviews %}
