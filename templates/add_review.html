@@ -21,6 +21,18 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
+                <i class="material-icons prefix">folder</i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Book Category</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <input id="about" name="about" type="text" class="validate" required>
                 <label for="about">About</label>
@@ -36,14 +48,14 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">image</i>
-                <label for="image_url">Insert URL of the book's cover image URL</label>
+                <label for="image_url">Insert book image URL</label>
                 <input id="image_url" name="image_url" type="url" class="validate" required>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">local_play</i>
-                <label for="buy">Insert URL to wherre you can buy the book</label>
+                <i class="material-icons prefix">shopping_cart</i>
+                <label for="buy">Insert URL of where you can buy the book</label>
                 <input id="buy" name="buy" type="url" class="validate" required>
             </div>
         </div>
