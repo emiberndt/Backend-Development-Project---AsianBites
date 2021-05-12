@@ -8,12 +8,29 @@
     <p class="center-align white-text">Contribution by members only, feel free to join us!.</p>
     {% endif %}
 
+    <div class="row card-panel grey lighten-5">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="material-icons prefix">search</i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Books</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_reviews') }}" class="btn grey text-shadow">Reset</a>
+                    <button type="submit" class="btn deep-orange text-shadow">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if reviews|length > 0 %}
     <ul class="collapsible popout">
         {% for review in reviews %}
         <li>
             <div class="collapsible-header blue-grey darken-2 white-text">
-                <strong>{{ review.book_title }} by {{ review.author }}</strong>
-                <i class="material-icons">keyboard_arrow_down</i>
+                    <strong>{{ review.book_title }} by {{ review.author }}</strong>
+                    <i class="material-icons">keyboard_arrow_down</i>
             </div>
             <div class="collapsible-body blue-grey darken-2 white-text">
                 <img src="{{ review.image_url }}" alt="The cover of the book">
@@ -37,5 +54,8 @@
         </li>
         {% endfor %}
     </ul>
+    {% else %}
+        <h3 class="black-text center-align">No results found</h3>
+    {% endif %}
 
  {% endblock %}
