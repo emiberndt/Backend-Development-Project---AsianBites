@@ -180,7 +180,7 @@ I want to have the option to edit or delete my own book reviews.
     - Checked if the cards redirected to the correct pages 'Add Reviews' & 'Write Review'.
     - Checked that the profile page welcomed the user with it's username.
 - **Add Reviews**:
-    - Checked if the book form works as it should. Diplaying all the inputs.
+    - Checked if the add review form works as it should. Displaying all the inputs.
     - Checked that the fields will require an input in each field of the form, if no information is provided the line will go red.
     - Checked if the book review is sent to the book library (view reviews) correctly.
 - **Log out**:
