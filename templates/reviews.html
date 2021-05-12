@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+    {% if session.user %}
     <h3 class="center-align white-text">Book Reviews</h3>
-
+    {% else %}
     <h5 class="center-align white-text">Everyone is welcome to browse thourgh our library of books and reviews, provided by our members.</h5>
     <p class="center-align white-text">Contribution by members only, feel free to join us!.</p>
-
+    {% endif %}
 
     <ul class="collapsible popout">
         {% for review in reviews %}
