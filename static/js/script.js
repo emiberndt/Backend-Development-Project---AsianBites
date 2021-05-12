@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.modal').modal();
 
+    /* Code for making the Category field in the 'add review'-form turn red if no input is made */
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };

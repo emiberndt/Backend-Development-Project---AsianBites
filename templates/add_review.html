@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!--Headline-->
 <h3 class="center-align white-text">Add Book Review</h3>
-
+<!--Form for adding a book review-->
 <div class="row card-panel blue-grey darken-2">
     <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+        <!--Book Title-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">edit</i>
@@ -12,6 +13,7 @@
                 <label for="book_title">Book Title</label>
             </div>
         </div>
+        <!--Author-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">face</i>
@@ -19,6 +21,7 @@
                 <label for="author">Author</label>
             </div>
         </div>
+        <!--Category-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">folder</i>
@@ -31,6 +34,7 @@
                 <label for="category_name">Book Category</label>
             </div>
         </div>
+        <!--About the book-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -38,6 +42,7 @@
                 <label for="about">About</label>
             </div>
         </div>
+        <!--Review-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">insert_comment</i>
@@ -45,6 +50,7 @@
                 <label for="review">Your Review</label>
             </div>
         </div>
+        <!--URL book image-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">image</i>
@@ -52,6 +58,7 @@
                 <input id="image_url" name="image_url" type="url" class="validate" required>
             </div>
         </div>
+        <!--URL buy book-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">shopping_cart</i>
@@ -59,6 +66,7 @@
                 <input id="buy_here" name="buy_here" type="url" class="validate" required>
             </div>
         </div>
+        <!--Submit review button-->
           <div class="row">
               <div class="col s12 center-align">
                   <button class="btn waves-effect waves-light deep-orange" type="submit" name="action">ADD REVIEW

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
+    <!--Messages for user/non-user-->
     {% if session.user %}
     <h3 class="center-align white-text">Book Reviews</h3>
     {% else %}
     <h5 class="center-align white-text">Everyone is welcome to browse thourgh our library of books and reviews, provided by our members.</h5>
     <p class="center-align white-text">Contribution by members only, feel free to join us!.</p>
     {% endif %}
-
+    <!--Search for books-->
     <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -23,7 +23,7 @@
             </div>
         </form>
     </div>
-
+    <!--Listed books-->
     {% if reviews|length > 0 %}
     <ul class="collapsible popout">
         {% for review in reviews %}
@@ -65,6 +65,7 @@
         </li>
         {% endfor %}
     </ul>
+    <!--No search results-->
     {% else %}
         <h3 class="black-text center-align">No results found</h3>
     {% endif %}
